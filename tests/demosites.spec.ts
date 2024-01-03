@@ -16,6 +16,8 @@ test("Demoblaze", async ({ page },testInfo) => {
  await takeArchive(page, "Second slide", testInfo);
 
  await page.locator('[id="itemc"]').nth(0).click();
+
+ await page.waitForTimeout(1000);
  
  await takeArchive(page, "Phones Page", testInfo);
 
