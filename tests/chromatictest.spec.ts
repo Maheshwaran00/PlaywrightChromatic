@@ -2,7 +2,7 @@ import { test, expect, takeArchive } from "@chromaui/test-archiver";
 
 test.use({ disableAutoCapture: true,resourceArchiveTimeout:1000*60 });
 
-test("Dashboard", async ({ page },testInfo) => {
+test("Book Store", async ({ page },testInfo) => {
  await page.goto("https://automationbookstore.dev/");
 
  await expect(page).toHaveTitle("Automation Bookstore");
