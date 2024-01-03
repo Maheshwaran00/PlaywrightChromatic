@@ -11,11 +11,7 @@ test("Book Store", async ({ page },testInfo) => {
 
  await page.keyboard.press('Enter');
 
- // 👇 Take a screenshot once the dialog is located
- // ➖ Remove this line
- // page.screenshot();
- // ➕ Add this line
- await takeArchive(page, testInfo);
+ await takeArchive(page, "Home Page" ,testInfo);
 
  await page.locator('[title="Clear text"]').click();
 });
