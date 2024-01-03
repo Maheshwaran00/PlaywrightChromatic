@@ -3,17 +3,13 @@ import { test, expect, takeArchive } from "@chromaui/test-archiver";
 test.use({ disableAutoCapture: true,resourceArchiveTimeout:1000*60 });
 
 test("Dashboard", async ({ page },testInfo) => {
- await page.goto("https://uat.quiklyz.com/");
+ await page.goto("https://automationbookstore.dev/");
 
- await page.locator('text="Chennai"').click();
+ await expect(page).toHaveTitle("Automation Bookstore");
 
- await expect(page).toHaveTitle(/Quiklyz/);
+ await page.locator('[id="searchBar"]').fill('Playwright');
 
- const expandButton = page.locator('text="Find Cars"').nth(0);
-
- await expandButton.click();
-
- const dialog = page.locator("[title]").nth(0);
+ await page.keyboard.press('Enter');
 
  // 👇 Take a screenshot once the dialog is located
  // ➖ Remove this line
@@ -21,5 +17,5 @@ test("Dashboard", async ({ page },testInfo) => {
  // ➕ Add this line
  await takeArchive(page, testInfo);
 
- await dialog.click();
+ await page.locator('[title="Clear text"]').click();
 });
