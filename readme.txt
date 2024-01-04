@@ -34,6 +34,20 @@ test("Book Store", async ({ page },testInfo) => {
  
 });
 
+add the following commands in playwright.config.ts
+
+import { ChromaticConfig } from "@chromaui/test-archiver";
+
+"export default defineConfig({" replace it with "export default defineConfig<ChromaticConfig>({" 
+
+use:{    disableAutoCapture: true,  }
+
+add the below command in package.json
+
+scripts:{
+ "build-archive-storybook": "build-archive-storybook",
+ }
+
 4-Commit the scripts to cloud repository
 
 5-Connect the repository to chromatic platform

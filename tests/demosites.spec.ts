@@ -3,6 +3,7 @@ import { test, expect, takeArchive } from "@chromaui/test-archiver";
 test.use({ disableAutoCapture: true,resourceArchiveTimeout:1000*60 });
 
 test("Demoblaze", async ({ page },testInfo) => {
+    
  await page.goto("https://www.demoblaze.com/");
 
  await expect(page).toHaveTitle("STORE");
