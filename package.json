@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-archive-storybook": "build-archive-storybook",
+    "build-archive-storybook": "build-archive-storybook",   
     "chromatic": "npx chromatic --project-token=chpt_65f6779f9cca31d"
   },
   "keywords": [],
@@ -24,4 +24,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
+  
 }
