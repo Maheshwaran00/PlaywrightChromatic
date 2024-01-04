@@ -22,6 +22,10 @@ test("Demoblaze", async ({ page },testInfo) => {
  
     await takeArchive(page, "Phones Page", testInfo);
 
+    await page.locator('[class="card-block"]').nth(0).click();
+
+    await takeArchive(page, "Phones Page", testInfo);
+
     await page.goto("https://automationbookstore.dev/");
    
     await expect(page).toHaveTitle("Automation Bookstore");
