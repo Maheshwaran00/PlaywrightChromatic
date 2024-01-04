@@ -23,3 +23,18 @@ test("Demoblaze", async ({ page },testInfo) => {
  await takeArchive(page, "Phones Page", testInfo);
 
 });
+test("Book Store", async ({ page },testInfo) => {
+
+    await page.goto("https://automationbookstore.dev/");
+   
+    await expect(page).toHaveTitle("Automation Bookstore");
+   
+    await page.locator('[id="searchBar"]').fill('Playwright');
+   
+    await page.keyboard.press('Enter');
+   
+    await takeArchive(page, "Home Page" ,testInfo);
+   
+    await page.locator('[title="Clear text"]').click();
+    
+   });
